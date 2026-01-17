@@ -5,11 +5,10 @@ metadata:
   name: eks-spot-cluster
   region: us-east-1
 
-managedNodeGroups: # this is also completely managed by AWS
+managedNodeGroups:  #this is completely managed by aws 
   - name: spot
-    instanceType: m5.large
-    # your K8 node can be anytime taken back by AWS
+    instanceType: c7i-flex.large
     spot: true
-    desiredCapacity: 3
+    desiredCapacity: 2
     ssh:
-      publicKeyName: kubernetes # replace this with your keypair exists in AWS.
+      publicKeyName: kubernetes
